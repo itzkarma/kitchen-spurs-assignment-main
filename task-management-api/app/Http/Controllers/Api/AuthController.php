@@ -12,17 +12,17 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    public function test()
-    {
-        try {
-            return response()->json("Hi");
-        } catch (\Throwable $th) {
-            return response()->json([
-                'status' => false,
-                'message' => $th->getMessage()
-            ], 500);
-        }
-    }
+    // public function test()
+    // {
+    //     try {
+    //         return response()->json("Hi");
+    //     } catch (\Throwable $th) {
+    //         return response()->json([
+    //             'status' => false,
+    //             'message' => $th->getMessage()
+    //         ], 500);
+    //     }
+    // }
 
     public function register(Request $request)
     {

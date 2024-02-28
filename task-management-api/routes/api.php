@@ -22,19 +22,16 @@ use App\Http\Controllers\Api\TaskController;
 
 // signup and login
 Route::controller(AuthController::class)->group(function(){
-    // Route::get('auth/test', 'test');
     Route::post('auth/register', 'register');
     Route::post('auth/login', 'login');
 });
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::controller(AuthController::class)->group(function(){
-        // Route::get('auth/test', 'test');
         Route::get('auth/user', 'user');
         Route::post('auth/logout', 'logout');
     });
 
-    // Route::get('tasks/test', [TaskController::class, 'test']);
     Route::get('tasks/assigned-to-me', [TaskController::class, 'tasksAssignedToCurrentUser']);
     Route::resource('tasks', TaskController::class);
     Route::post('tasks/{task}/assign-users', [TaskController::class, 'assignUsers']);

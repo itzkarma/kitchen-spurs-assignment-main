@@ -85,32 +85,6 @@ class TaskController extends Controller
         }
     }
 
-    // public function show($id)
-    // {
-    //     try {
-    //         $task = Task::find($id);
-
-    //         if (is_null($task)) {
-    //             return response()->json([
-    //                 "status" => false,
-    //                 "message" => "Task not found",
-    //                 "data" => []
-    //             ]);
-    //         }
-
-    //         return response()->json([
-    //             "status" => true,
-    //             "message" => "Task retrieved successfully.",
-    //             "data" => $task
-    //         ]);
-    //     } catch (\Throwable $th) {
-    //         return response()->json([
-    //             'status' => false,
-    //             'message' => $th->getMessage()
-    //         ], 500);
-    //     }
-    // }
-
     public function update(Request $request, Task $task)
     {
         try {
